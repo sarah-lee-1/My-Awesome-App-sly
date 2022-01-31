@@ -1,0 +1,12 @@
+"name": "My-Awesome-App-sly",
+"version": "0.1.0",
+"description": "Hello World in Node with Express",
+"main": "app-js",
+"scripts": {
+    "start": "node app.js"
+}
+"author": "<your name>",
+"license": "ISC",
+"dependencies":  {
+    "express": "^4.17.1"
+}
