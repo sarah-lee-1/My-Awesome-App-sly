@@ -1,12 +1,14 @@
-"name": "My-Awesome-App-sly",
-"version": "0.1.0",
-"description": "Hello World in Node with Express",
-"main": "app-js",
-"scripts": {
-    "start": "node app.js"
-}
-"author": "<your name>",
-"license": "ISC",
-"dependencies":  {
-    "express": "^4.17.1"
+{
+    "name": "my-awesome-app-sly",
+    "version": "0.1.0",
+    "description": "Hello World in Node with Express",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "author": "Sarah Yegge",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
