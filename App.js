@@ -1,3 +1,6 @@
+// The purpose of this project is to get use to
+// GitHub branches and Tags. 
+
 const express = require('express')
 const app = express()
 // Simple Hello Word Node App
