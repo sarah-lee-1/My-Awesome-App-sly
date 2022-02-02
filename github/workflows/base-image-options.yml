@@ -1,0 +1,33 @@
+name: Build Prod Image & Deploy to Docker Hub
+
+env:
+  DATE_STAMP: $(date +%s)
+
+on:
+  push:
+    branches: [main]
+  pull_request: 
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - users: actions/checkout@v2
+
+      - name: Env variables
+        run: echo "date-stamp-$"{{env.DATE-STAMP}} >> $GITHUB_ENV
+
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag sarahyegge/my-awesome-app-sly:latest
+ 
+      - name: login to Docker Hub
+        uses: docker/login action@v1
+        with: 
+          username: ${{ secrets.DOCKER-USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}  
+
+      - name: Push the Docker image to Docker Hub
+        run: docker push --all tags sarahyegge/My-Awesome-App-sly 
