@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  web:
+    prod-web:
+      container_name: my-awesome-app-sly-prod
+      image: sarahyegge/my-awesome-app-sly:latest 
+      ports: 
+      - '80:80' 
