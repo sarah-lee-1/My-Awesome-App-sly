@@ -1,0 +1,37 @@
+# name: Build Image & Deploy to Docker Hub
+
+# env:
+#   DATE_STAMP: $(date +%s)
+
+# on:
+#   push:
+#     branches: [main]
+#   pull_request: 
+#     branches: [main]
+#   workflow_dispatch:
+
+# jobs:
+
+#   deploy: 
+
+#     runs-on: ubuntu-latest 
+
+#     steps: 
+#           - uses: actions/checkout@v2 
+#           - name: Env variables 
+#             run: echo "date-stamp=${{env.DATE.STAMP}}" >>GITHUB_ENV
+#           - name: Checkout source code 
+#             uses: actions/checkout@v2 
+#           - name: Generate deployment package
+#             run: zip -r deploy.zip . -x '*.git*' 
+#           - name: Deploy to AWS EBS 
+#             uses: einaregilsson/beanstalk-deploy@v20 
+#             with:
+#               aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+#               aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+#               application_name: sarah-yegge-portfolio
+#               environment_name: sarahyeggeportfolio-env
+#               version_label: ${{ env.date-stamp }}
+#               region: us-east-1
+#               deployment_package: deploy.zip 
+

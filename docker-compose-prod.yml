@@ -2,13 +2,12 @@ version: '3.9'
 
 services:
   web:
-    container_name: my-awesome-app-crm-prod
+    container_name: my-awesome-app-sly-prod
     build: 
       context: ./
       dockerfile: ./Dockerfile
     ports: 
-      - '8080:80'
-      - '80:80'
+      - '3010:3000' 
     volumes: 
       - ./:/app 
       - ./node_modules:/app/node_modules

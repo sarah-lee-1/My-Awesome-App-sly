@@ -1,0 +1,31 @@
+# name: Docker Dev Image CI
+
+# on:
+#   pull_request:
+#     branches: [ main ]
+#   push: 
+#     branches: [ main ] 
+
+#   workflow_dispatch:
+# env:
+# DATE_STAMP: $(date +%s)
+
+# jobs: 
+
+#   build: 
+
+#   runs-on: ubuntu-latest 
+
+#   steps: 
+
+#         - uses: actions/checkout@v2 
+#         - name: Env variables 
+#         - run: echo "date-stamp-${{ env.DATE_STAMP }}" >> GITHUB_ENV
+#         - name: Build the Docker image 
+#           run: docker build --file Dockerfile.dev --tag syegg/My-Awesome-App-sly: latest #!"syegg = docker ID"
+#           # need tag above 
+#         - name: Add "date-stamp" tag to the image
+#           run: docker image tag syegg/My-Awesome-App-sly: latest syegg/My-Awesome-App-tmp:${{ env.DATE_STAMP }} 
+#         - name: Login to Docker Hub 
+
+

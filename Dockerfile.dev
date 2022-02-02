@@ -1,10 +1,14 @@
-FROM node:latest 
+FROM node:10 
 
-WORKDIR /app
+WORKDIR /app/src/app 
 
-COPY package.json ./
+COPY package*.json ./ 
 
-RUN npm install
-RUN npm install react-scripts@5.0.0 -g
+RUN npm install 
 
-CMD ["npx", "nodemon", "--watch", "src", "--exec", "npm", "start"]
+COPY . .
+
+ENV APP_PORT 8080
+
+EXPOSE 8080
+CMD [ "node", "App.js" ] 
